@@ -1,87 +1,80 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/FORMULARIOEstudiantes/CSS/Estilos.css">
-        <script src="/FORMULARIOEstudiantes/JS/Validaciones.js" defer></script>
-        <title>FORMULARIO REGISTRO DE ESTUDIANTES PARA VIAJE DE EXCURSION</title>
-        <script src="https://www.google.com/recaptcha/api.js"></script>
-    </head>
-    <body>
-        <h1>FORMULARIO REGISTRO DE ESTUDIANTES PARA VIAJE DE EXCURSION</h1>
-        <div>
-            <form id="demo-form" action="/FORMULARIOEstudiantes/PHP/validacionReCaptcha.php" method="POST"></form>
-            <form id="registroForm">
-                <h2>Ingrese Carnet</h2>
-                <div>
-                    <label for="codigo">Código:</label>
-                    <input type="text" id="codigo" name="codigo" pattern="[0-9]+" placeholder="Ej:1490" required>
-                </div>
-                <div>
-                    <label for="anio">Año:</label>
-                    <input type="text" id="anio" name="anio" placeholder="ej:21" maxlength="2" oninput="validarAnio(this)" required>
-                </div>
-                <div>
-                    <label for="correlativo">Correlativo:</label>
-                    <input type="text" id="correlativo" name="correlativo" pattern="\d+" placeholder="ej: 6449" required>
-                </div>
-                <h2>Ingrese Primer Nombre</h2>
-                <input id="PrimNom" type="text" required>
-                <h2>Ingrese Segundo Nombre</h2>
-                <input id="SegNom" type="text" required>
-                <h2>Ingrese Primer Apellido</h2>
-                <input id="primAp" type="text" required>
-                <h2>Ingrese Segundo Apellido</h2>
-                <input id="SegAp" type="text" required>
-                <h2>Seleccione Fecha de Nacimiento</h2>
-                <input id="FechNac" type="date" required>
-                <h2>Ingrese Correo GMAIL</h2>
-                <input id="Gmail" type="email" placeholder="ej: MariaA123@gmail.com" required>
-                <h2>Seleccione su Sexo</h2>
-                <p>
-                    Sexo:
-                    <select name="sexo" id="Sexo" required>
-                        <option value="1">HOMBRE</option>
-                        <option value="2">MUJER</option>
-                    </select>
-                </p>
-                <h2>Ingrese su DNI</h2>
-                <input id="ValNDI" type="text" required>
-                <h2>Ingrese su Pasaporte</h2>
-                <input id="ValPasaporte" type="text" required>
-                <h2>Seleccione su País</h2>
-                <p>
-                    País:
-                    <select name="pais" id="Pais" required>
-                        <option value="1">Guatemala</option>
-                        <option value="2">El Salvador</option>
-                        <option value="3">Honduras</option>
-                        <option value="4">Nicaragua</option>
-                        <option value="5">Costa Rica</option>
-                        <option value="6">Panamá</option>
-                        <option value="7">Belice</option>
-                    </select>
-                </p>
-                <h2>Ingrese su Dirección</h2>
-                <input class="inputDireccion" id="Direccion" type="text" required>
-                <h2>ENVIAR FORMULARIO</h2>
-                <div class="g-recaptcha" data-sitekey="6LdlPRsqAAAAAPR1hJDoL9SizynIhTpRIk04chXl"></div>
-                <input class="EnviarForm" type="submit">
-                <button class="g-recaptcha" 
-                data-sitekey="reCAPTCHA_site_key" 
-                data-callback='onSubmit' 
-                data-action='submit'>Submit</button>
-            </form>
-        </div>
-        <div class="FondoEnlaces">
-            <img src="/FORMULARIOEstudiantes/Imagenes/LogoUX.png" alt="Logo Universidad X">
-            <a href="/FORMULARIOEstudiantes/index.html">CLIC PARA REGRESAR A PAGINA PRINCIPAL</a>
-        </div>
-        <script>
-            function onSubmit(token) {
-              document.getElementById("demo-form").submit();
-            }
-        </script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/FORMULARIOEstudiantes/CSS/Estilos.css">
+    <script src="/FORMULARIOEstudiantes/JS/Validaciones.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>FORMULARIO REGISTRO DE ESTUDIANTES PARA VIAJE DE EXCURSION</title>
+</head>
+<body>
+    <h1>FORMULARIO REGISTRO DE ESTUDIANTES PARA VIAJE DE EXCURSION</h1>
+    <div>
+        <form id="registroForm" action="/submit" method="POST">
+            <h2>Ingrese Carnet</h2>
+            <div>
+                <label for="codigo">Código:</label>
+                <input type="text" id="codigo" name="codigo" pattern="[0-9]+" placeholder="Ej:1490" required>
+            </div>
+            <div>
+                <label for="anio">Año:</label>
+                <input type="text" id="anio" name="anio" placeholder="ej:21" maxlength="2" oninput="validarAnio(this)" required>
+            </div>
+            <div>
+                <label for="correlativo">Correlativo:</label>
+                <input type="text" id="correlativo" name="correlativo" pattern="\d+" placeholder="ej: 6449" required>
+            </div>
+            <h2>Ingrese Primer Nombre</h2>
+            <input id="PrimNom" type="text" required>
+            <h2>Ingrese Segundo Nombre</h2>
+            <input id="SegNom" type="text" required>
+            <h2>Ingrese Primer Apellido</h2>
+            <input id="primAp" type="text" required>
+            <h2>Ingrese Segundo Apellido</h2>
+            <input id="SegAp" type="text" required>
+            <h2>Seleccione Fecha de Nacimiento</h2>
+            <input id="FechNac" type="date" required>
+            <h2>Ingrese Correo GMAIL</h2>
+            <input id="Gmail" type="email" placeholder="ej: MariaA123@gmail.com" required>
+            <h2>Seleccione su Sexo</h2>
+            <p>
+                Sexo:
+                <select name="sexo" id="Sexo" required>
+                    <option value="1">HOMBRE</option>
+                    <option value="2">MUJER</option>
+                </select>
+            </p>
+            <h2>Ingrese su DNI</h2>
+            <input id="ValNDI" type="text" required>
+            <h2>Ingrese su Pasaporte</h2>
+            <input id="ValPasaporte" type="text" required>
+            <h2>Seleccione su País</h2>
+            <p>
+                País:
+                <select name="pais" id="Pais" required>
+                    <option value="1">Guatemala</option>
+                    <option value="2">El Salvador</option>
+                    <option value="3">Honduras</option>
+                    <option value="4">Nicaragua</option>
+                    <option value="5">Costa Rica</option>
+                    <option value="6">Panamá</option>
+                    <option value="7">Belice</option>
+                </select>
+            </p>
+            <h2>Ingrese su Dirección</h2>
+            <input class="inputDireccion" id="Direccion" type="text" required>
+            
+            <h2>Verificación reCAPTCHA</h2>
+            <div class="g-recaptcha" data-sitekey="6LfJRhsqAAAAAMtJGysxfDO1p6HlY083PWz0R_at"></div>
+
+            <h2>ENVIAR FORMULARIO</h2>
+            <input class="EnviarForm" type="submit">
+        </form>
+    </div>
+    <div class="FondoEnlaces">
+        <img src="/FORMULARIOEstudiantes/Imagenes/LogoUX.png" alt="Logo Universidad X">
+        <a href="/FORMULARIOEstudiantes/index.html">CLIC PARA REGRESAR A PAGINA PRINCIPAL</a>
+    </div>
+</body>
 </html>
